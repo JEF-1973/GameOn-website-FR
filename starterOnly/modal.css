@@ -157,7 +157,20 @@ main {
   font-size: 16px;
 }
 
-.bground {
+/* .bsubmitted{
+  display:none;
+  position: fixed;
+  z-index:1;
+  left: 50px;
+  top: 100px;
+  height: 100px;
+  width: 40px;
+  overflow: auto;
+  background-color: rgba(204, 176, 19, 0.616);
+  
+} */
+
+.bground{
   display: none;
   position: fixed;
   z-index: 1;
@@ -168,6 +181,26 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
+
+
+
+.bsubmitted{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 40%;
+  top: 0;
+  height: 400px;
+  width: 25%;
+  overflow: hidden;
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-top: 300px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+
+} 
 
 .content {
   margin: 5% auto;
@@ -208,6 +241,16 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+#erreurPrenom, #erreurNom,#erreurMail,#erreurDate, #erreurNumber,#erreurOption,#erreurCheck {
+  visibility: hidden;
+  color: #fe142f;
+  padding: 0;
+  font-size: 1rem;
+  margin: 60px 0 30px;
+  font-weight: bolder;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -220,12 +263,13 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
-.formData[data-error-visible="true"]::after {
+input[data-error-visible="true"]::after {
   opacity: 1;
 }
-.formData[data-error-visible="true"] .text-control {
+input[data-error-visible="true"] {
   border: 2px solid #e54858;
 }
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -321,8 +365,10 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-validated {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -526,4 +572,6 @@ footer {
     opacity: 1;
   }
 }
+
+
 
