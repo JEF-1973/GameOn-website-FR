@@ -52,9 +52,10 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close" id ="btn-close"></span>
+          <span class="close" id ="btn-close"></span> 
+          
           <div class="modal-body">
-            <form name="reserve"  method="get" id="form">
+            <form  name="reserve"  method="get" id="form">
               <div class="formData" data-error data-error-visible="false">
                 <label for ="first-name">Prénom</label><br>
                 <input
@@ -194,13 +195,20 @@
                 </label>
                 <p id="erreurCheck">Vous devez lire et accepter les termes et conditions.</p>
               </div>
-              <input class="btn-submit" type="submit" value="C'est parti">
+              <!-- <input class="btn-submit" type="submit" value="C'est parti"> -->
+              <input id="submitButton" class="btn-submit button" type="submit" value="C'est parti" />
             </form>
+            <div id="thankyou">
+              <div class="thankyou__text">
+                <p>Merci!</p>
+                <p> Votre réservation<br /> a été reçue.</p>
+              </div>
+              <button class="btn-close modal-btn">
+                Fermer
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bsubmitted">
-        <input class="btn-validated" type="button" value="Merci ! Votre réservation a été reçue.">
       </div>
     </main>
     <footer>

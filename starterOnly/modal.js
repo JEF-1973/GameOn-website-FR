@@ -9,11 +9,16 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground")
-const modalsub =document.querySelector(".bsubmitted")
+const modalContent = document.querySelector(".content")
+const infoForm = document.getElementById("form")
 const modalBtn = document.querySelectorAll(".modal-btn")
 const formData = document.querySelectorAll(".formData") 
 const btnClose = document.querySelector("#btn-close")
-const btnSubmit = document.querySelector(".btn-submit")
+const submitBtn = document.querySelector(".btn-submit")
+
+const thankYouModal = document.getElementById("thankyou")
+// const closeModal = document.querySelector(".close")
+//const closebuttonModal = document.querySelector(".btn-close")
 
 // form elements
 const firstNameInput = document.querySelector("#first-name")
@@ -26,9 +31,7 @@ const conditionCheck = document.querySelector("#checkbox1");
 
 const form = document.getElementById("form") // pas besoin de # avec getElementById
 
-/*********************************************************/
-// const erreurFrame = document.querySelector(".formData")
-/********************************************************/
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal))
@@ -55,14 +58,31 @@ form.addEventListener("submit",function(e){
   }
   else {
     // lancer la feuille de validation
-    launchModal2()
+    // ici il ne faut pas lancer une nouvelle modale mais faire un display 
+    //.none de la modal actuelle puis un inner html pour afficher le message
+    //launchModal2()
+    //formData.style.display = "none" //hide modal form
+    //infoForm.style.display = "inline"
+    infoForm.style.display="none"
+    // modalContent.style.display="none"
+    thankYouModal.style.display = "inline"
+    firstNameInput.value=""
+    lastNameInput.value=""
+    emailInput.value=""
+    dateInput.value=""
+    quantiteInput.value=""
+    locationRadio.value=""
+    
+    
+    // thankYouModal.style.display = "inline" //show modal thank you
+    // modalbg.innerHTML='<h1>Bonjour à tous</h1>'
+
+    // remplacer par 
     console.log("C'est OK !")
     
   }
 })
     
-  
-
 
 btnClose.addEventListener("click",closeModal)
 
@@ -137,7 +157,7 @@ function checkDate(){
   return false
 }
 
-//quantiteInput.addEventListener("focusout",checkNumber)
+
 //fonction checkNumber qui controle qu'on a bien un nombre saisi
 function checkNumber(){
   const quantite = quantiteInput.value;
@@ -191,15 +211,12 @@ return false
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block"
+  infoForm.style.display = "inline"; //show form
+  thankYouModal.style.display = "none"; //hide thank you
+  
 }
 
 
-function launchModal2() {
-  modalsub.style.display = "block";
-  console.log("C'est OK !")
-  closeModal()
- 
-}
 
 //close the modal form
 function closeModal(){

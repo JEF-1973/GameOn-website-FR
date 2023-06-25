@@ -184,7 +184,7 @@ main {
 
 
 
-.bsubmitted{
+/* .bsubmitted{
   display: none;
   position: fixed;
   z-index: 1;
@@ -200,7 +200,7 @@ main {
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
 
-} 
+}  */
 
 .content {
   margin: 5% auto;
@@ -508,6 +508,32 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+}
+
+/* modal thank you  */
+.thankyou {
+  
+  display: flex;
+  border :2px solid green;
+  flex-direction: column;
+  padding: 20px 8%;
+  /* margin: 15px auto; */
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+
+.thankyou__text {
+  padding: 206px 0;
+  
+}
+
+.thankyou__text p {
+  align-self: flex-end;
+  text-align: center;
+  font-size: 1.3rem;
+  
 }
 .copyrights {
   color: #fe142f;
